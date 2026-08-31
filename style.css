@@ -32,10 +32,7 @@ body {
   line-height: 1.6;
 }
 
-/* ==========================================================
-   3D MULTI-LAYER SCENE VIEWPORT
-   ========================================================== */
-
+/* 3D Scene Viewport */
 .scene-container {
   position: fixed;
   top: 0;
@@ -60,13 +57,11 @@ body {
   will-change: transform, opacity;
 }
 
-/* Layer 1: Background Stars/Grid */
 .layer-bg {
   background-image: url('https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?q=80&w=1920&auto=format&fit=crop');
   opacity: 0.55;
 }
 
-/* Layer 2: Midground (Aapki Nayi Uploaded AI & Coding Image) */
 .layer-mid {
   background-image: url('https://i.ibb.co/mrdgyKr2/file-000000002944821180a5962eb6aea0ef.png');
   background-size: contain;
@@ -74,7 +69,6 @@ body {
   opacity: 0.85;
 }
 
-/* Layer 3: Foreground (Ambient Dust Particles) */
 .layer-fore {
   background-image: url('https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=1920&auto=format&fit=crop');
   mix-blend-mode: screen;
@@ -90,10 +84,7 @@ body {
   background: radial-gradient(circle at 50% 40%, rgba(4, 6, 11, 0.35) 0%, rgba(4, 6, 11, 0.96) 85%);
 }
 
-/* ==========================================================
-   NAVIGATION
-   ========================================================== */
-
+/* Header & Nav */
 .site-header {
   position: sticky;
   top: 0;
@@ -125,20 +116,10 @@ body {
   letter-spacing: -0.02em;
 }
 
-.logo-symbol {
-  color: var(--accent-cyan);
-  font-family: monospace;
-}
+.logo-symbol { color: var(--accent-cyan); font-family: monospace; }
+.logo-highlight { color: var(--accent-cyan); }
 
-.logo-highlight {
-  color: var(--accent-cyan);
-}
-
-.nav-links {
-  display: flex;
-  gap: 24px;
-}
-
+.nav-links { display: flex; gap: 24px; }
 .nav-item {
   color: var(--text-secondary);
   text-decoration: none;
@@ -146,10 +127,7 @@ body {
   font-weight: 500;
   transition: color 0.2s ease;
 }
-
-.nav-item:hover {
-  color: var(--accent-cyan);
-}
+.nav-item:hover { color: var(--accent-cyan); }
 
 .search-box input {
   background: rgba(255, 255, 255, 0.05);
@@ -162,17 +140,13 @@ body {
   width: 220px;
   transition: all 0.2s ease;
 }
-
 .search-box input:focus {
   border-color: var(--accent-cyan);
   background: rgba(255, 255, 255, 0.08);
   width: 260px;
 }
 
-/* ==========================================================
-   HERO SECTION
-   ========================================================== */
-
+/* Main Layout */
 .main-layout {
   max-width: 1100px;
   margin: 0 auto;
@@ -182,7 +156,7 @@ body {
 }
 
 .hero-section {
-  min-height: 85vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -232,24 +206,64 @@ body {
   letter-spacing: 0.1em;
 }
 
-.bounce-arrow {
-  animation: bounce 2s infinite;
-}
-
+.bounce-arrow { animation: bounce 2s infinite; }
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
   40% { transform: translateY(-6px); }
   60% { transform: translateY(-3px); }
 }
 
-/* ==========================================================
-   CATEGORY STRIP
-   ========================================================== */
+/* Section Blocks */
+.section-block {
+  margin-top: 70px;
+}
 
+.section-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 14px;
+}
+
+.section-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-heading {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.section-sub {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.live-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #10b981;
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+/* Category Filter Strip */
 .category-strip {
   display: flex;
   gap: 12px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   flex-wrap: wrap;
 }
 
@@ -271,10 +285,7 @@ body {
   color: #ffffff;
 }
 
-/* ==========================================================
-   ARTICLES FEED (GLASSMORPHIC CARDS)
-   ========================================================== */
-
+/* Articles Feed */
 .feed-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -285,7 +296,7 @@ body {
   background: var(--panel-bg);
   border: 1px solid var(--border-subtle);
   border-radius: 18px;
-  padding: 32px;
+  padding: 28px;
   display: flex;
   flex-direction: column;
   backdrop-filter: blur(14px);
@@ -303,7 +314,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   font-size: 0.8rem;
 }
 
@@ -320,7 +331,7 @@ body {
 .card-title a {
   color: #ffffff;
   text-decoration: none;
-  font-size: 1.4rem;
+  font-size: 1.35rem;
   line-height: 1.35;
   font-weight: 700;
   display: inline-block;
@@ -334,8 +345,8 @@ body {
 
 .card-summary {
   color: var(--text-secondary);
-  font-size: 0.95rem;
-  margin-bottom: 24px;
+  font-size: 0.93rem;
+  margin-bottom: 22px;
   flex-grow: 1;
 }
 
@@ -349,10 +360,7 @@ body {
   font-size: 0.9rem;
 }
 
-/* ==========================================================
-   FOOTER (STRICT VERTICAL STACKING)
-   ========================================================== */
-
+/* Footer (Strict Vertical) */
 .site-footer {
   border-top: 1px solid var(--border-subtle);
   background: rgba(4, 6, 11, 0.96);
@@ -421,7 +429,6 @@ body {
   text-decoration: none;
   font-size: 0.92rem;
   transition: color 0.2s ease, transform 0.2s ease;
-  width: auto;
 }
 
 .footer-vertical-links a:hover {
@@ -439,30 +446,13 @@ body {
   color: #ffffff;
 }
 
-/* ==========================================================
-   RESPONSIVENESS (MOBILE & TABLETS)
-   ========================================================== */
-
+/* Mobile Responsive */
 @media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.4rem;
-  }
-  
-  .nav-links {
-    display: none;
-  }
-  
-  .search-box input {
-    width: 100%;
-  }
-
-  .feed-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-container {
-    flex-direction: column;
-    gap: 32px;
-  }
+  .hero-title { font-size: 2.4rem; }
+  .nav-links { display: none; }
+  .search-box input { width: 100%; }
+  .feed-grid { grid-template-columns: 1fr; }
+  .footer-container { flex-direction: column; gap: 32px; }
+  .section-header-row { flex-direction: column; align-items: flex-start; gap: 4px; }
 }
 
