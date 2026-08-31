@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coding & Software Craft — NeuralScriptLab</title>
+  <meta name="description" content="Practical engineering guides on APIs, architecture patterns, performance, and shipping production-grade code.">
+  <link rel="canonical" href="https://neuralscriptlab.github.io/categories/coding.html">
+
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    /* Coding section theme — violet, evokes syntax highlighting / editors */
+    :root {
+      --accent-cyan: #a78bfa;
+      --border-glow: rgba(167, 139, 250, 0.28);
+    }
+
+    .category-header { padding: 60px 0 40px; text-align: center; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 16px; }
+    .breadcrumb a { color: var(--accent-cyan); text-decoration: none; }
+    .article-count-badge {
+      background: rgba(167, 139, 250, 0.12);
+      color: var(--accent-cyan);
+      border: 1px solid var(--border-glow);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      margin-top: 12px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body id="top" data-category="coding">
+
+  <div class="scene-container" aria-hidden="true">
+    <div class="layer layer-bg" id="layerBg"></div>
+    <div class="layer layer-mid" id="layerMid"></div>
+    <div class="layer layer-fore" id="layerFore"></div>
+    <div class="depth-overlay"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="../" class="brand-logo">
+        <span class="logo-symbol">&lt;/&gt;</span>
+        <span class="logo-text">NeuralScript<span class="logo-highlight">Lab</span></span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="../#articles" class="nav-item">Articles</a>
+        <a href="../#categories" class="nav-item">Categories</a>
+      </nav>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search coding guides..." autocomplete="off">
+      </div>
+    </div>
+  </header>
+
+  <main class="main-layout">
+    <section class="category-header">
+      <div class="breadcrumb">
+        <a href="../">Home</a> / <span>Categories</span> / Coding & Software Craft
+      </div>
+      <h1 class="hero-title">Coding & Software Craft</h1>
+      <p class="hero-description">
+        API design, performance tuning, edge runtimes, and the everyday engineering decisions behind reliable software.
+      </p>
+      <span class="article-count-badge" id="articleCount">Loading…</span>
+    </section>
+
+    <section class="feed-grid" id="articles">
+      <p style="color:var(--text-muted)">Loading guides…</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <p class="footer-brand">NeuralScriptLab</p>
+        <p class="footer-desc">Independent engineering publication and technical research hub.</p>
+        <p class="footer-copy">© 2026 NeuralScriptLab. All rights reserved.</p>
+      </div>
+
+      <div class="footer-right">
+        <p class="footer-col-title">Legal & Support</p>
+        <nav class="footer-vertical-links">
+          <a href="../privacy-policy.html">Privacy Policy</a>
+          <a href="../disclaimer.html">Disclaimer</a>
+          <a href="../contact.html">Contact Us</a>
+          <a href="#top" class="back-top">Back to Top ↑</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
