@@ -60,7 +60,7 @@ body {
 .layer-mid {
   background-image: url('https://i.ibb.co/mrdgyKr2/file-000000002944821180a5962eb6aea0ef.png');
   background-size: contain;
-  background-position: center 20%;
+  background-position: center 22%;
   opacity: 0.85;
 }
 
@@ -92,7 +92,7 @@ body {
 }
 
 .nav-container {
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 14px 20px;
   display: flex;
@@ -122,17 +122,20 @@ body {
   color: #fff;
   font-size: 0.85rem;
   outline: none;
-  width: 220px;
+  width: 200px;
+  transition: all 0.2s ease;
 }
+
 .search-box input:focus {
   border-color: var(--accent-cyan);
+  width: 230px;
 }
 
 /* Main Layout */
 .main-layout {
   max-width: 800px;
   margin: 0 auto;
-  padding: 180px 20px 60px;
+  padding: 200px 20px 60px;
   position: relative;
   z-index: 1;
 }
@@ -168,7 +171,30 @@ body {
   color: #ffffff;
 }
 
-/* Article Cards (Exact 2nd Image Styling) */
+/* Section Title */
+.section-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.section-heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+
+/* Article Cards */
 .feed-grid {
   display: flex;
   flex-direction: column;
@@ -236,41 +262,7 @@ body {
   text-decoration: none;
 }
 
-/* Latest Updates Notice Under Article 3 */
-.updates-banner {
-  margin-top: 24px;
-  background: rgba(13, 19, 33, 0.6);
-  border: 1px dashed rgba(56, 189, 248, 0.3);
-  border-radius: 14px;
-  padding: 16px 20px;
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.updates-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #10b981;
-  box-shadow: 0 0 8px #10b981;
-  flex-shrink: 0;
-}
-
-.updates-label {
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--accent-cyan);
-  text-transform: uppercase;
-  display: block;
-}
-
-.updates-text {
-  font-size: 0.88rem;
-  color: var(--text-secondary);
-}
-
-/* Footer (Strict Vertical Stacking - 3rd Image) */
+/* Vertical Footer */
 .site-footer {
   border-top: 1px solid var(--border-subtle);
   background: #020408;
@@ -340,8 +332,8 @@ body {
 }
 
 @media (max-width: 600px) {
-  .main-layout { padding-top: 130px; }
-  .search-box input { width: 150px; }
+  .main-layout { padding-top: 140px; }
+  .search-box input { width: 140px; }
   .article-card { padding: 24px 20px; }
   .card-title a { font-size: 1.2rem; }
 }
