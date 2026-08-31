@@ -32,7 +32,7 @@
 
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="top">
 
   <!-- Multi-Layer 3D Background Scene -->
   <div class="scene-container" aria-hidden="true">
@@ -53,7 +53,7 @@
       <nav class="nav-links">
         <a href="#articles" class="nav-item">Articles</a>
         <a href="#categories" class="nav-item">Categories</a>
-        <a href="#about" class="nav-item">About</a>
+        <a href="about.html" class="nav-item">About</a>
       </nav>
 
       <div class="search-box">
@@ -130,17 +130,24 @@
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="site-footer" id="about">
+  <!-- Site Footer -->
+  <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-left">
         <p class="footer-brand">NeuralScriptLab</p>
         <p class="footer-desc">Independent engineering publication and technical research hub.</p>
+        <p class="footer-copy">© 2026 NeuralScriptLab. All rights reserved.</p>
       </div>
-      <div class="footer-links">
-        <a href="sitemap.xml">Sitemap</a>
-        <a href="robots.txt">Robots.txt</a>
-        <a href="#top">Back to Top ↑</a>
+
+      <!-- Vertical Legal & Support Column -->
+      <div class="footer-right">
+        <p class="footer-col-title">Legal & Support</p>
+        <nav class="footer-vertical-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="disclaimer.html">Disclaimer</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="#top" class="back-top">Back to Top ↑</a>
+        </nav>
       </div>
     </div>
   </footer>
