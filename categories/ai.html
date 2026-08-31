@@ -9,20 +9,15 @@
 
   <link rel="stylesheet" href="../style.css">
   <style>
-    /* Category Page Layout Adjustments */
-    .category-header {
-      padding: 60px 0 40px;
-      text-align: center;
+    /* AI section theme — neural cyan/blue (site default) */
+    :root {
+      --accent-cyan: #38bdf8;
+      --border-glow: rgba(56, 189, 248, 0.25);
     }
-    .breadcrumb {
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      margin-bottom: 16px;
-    }
-    .breadcrumb a {
-      color: var(--accent-cyan);
-      text-decoration: none;
-    }
+
+    .category-header { padding: 60px 0 40px; text-align: center; }
+    .breadcrumb { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 16px; }
+    .breadcrumb a { color: var(--accent-cyan); text-decoration: none; }
     .article-count-badge {
       background: rgba(56, 189, 248, 0.1);
       color: var(--accent-cyan);
@@ -36,7 +31,7 @@
     }
   </style>
 </head>
-<body id="top">
+<body id="top" data-category="ai">
 
   <div class="scene-container" aria-hidden="true">
     <div class="layer layer-bg" id="layerBg"></div>
@@ -55,7 +50,6 @@
       <nav class="nav-links">
         <a href="../#articles" class="nav-item">Articles</a>
         <a href="../#categories" class="nav-item">Categories</a>
-        <a href="../about.html" class="nav-item">About</a>
       </nav>
 
       <div class="search-box">
@@ -73,57 +67,11 @@
       <p class="hero-description">
         In-depth architecture patterns, vector embeddings, local LLM deployment, and agent orchestration.
       </p>
-      <span class="article-count-badge">3 Guides Available</span>
+      <span class="article-count-badge" id="articleCount">Loading…</span>
     </section>
 
     <section class="feed-grid" id="articles">
-      <article class="article-card" data-category="ai">
-        <div class="card-meta">
-          <span class="card-tag">AI & Neural</span>
-          <span class="card-date">Aug 2026 • 8 min read</span>
-        </div>
-        <h2 class="card-title">
-          <a href="../articles/building-local-rag-pipeline.html">Building Local RAG Pipelines from Scratch with Ollama</a>
-        </h2>
-        <p class="card-summary">
-          Step-by-step implementation of offline document embedding, vector indexing, and low-latency retrieval loops without external API keys.
-        </p>
-        <div class="card-footer">
-          <span class="read-more">Read Guide →</span>
-        </div>
-      </article>
-
-      <article class="article-card" data-category="ai">
-        <div class="card-meta">
-          <span class="card-tag">AI & Neural</span>
-          <span class="card-date">Aug 2026 • 11 min read</span>
-        </div>
-        <h2 class="card-title">
-          <a href="../articles/prompt-engineering-vs-fine-tuning.html">Prompt Engineering vs. Fine-Tuning in Production</a>
-        </h2>
-        <p class="card-summary">
-          A performance and cost-benefit breakdown of LoRA adapters, domain fine-tuning, and structured few-shot prompting.
-        </p>
-        <div class="card-footer">
-          <span class="read-more">Read Guide →</span>
-        </div>
-      </article>
-
-      <article class="article-card" data-category="ai">
-        <div class="card-meta">
-          <span class="card-tag">AI & Neural</span>
-          <span class="card-date">Aug 2026 • 9 min read</span>
-        </div>
-        <h2 class="card-title">
-          <a href="../articles/autonomous-code-generation-agents.html">Building Autonomous Multi-Agent Code Reviewers</a>
-        </h2>
-        <p class="card-summary">
-          How to design recursive agent loops that inspect pull requests, run static analysis, and propose automated Git fixes.
-        </p>
-        <div class="card-footer">
-          <span class="read-more">Read Guide →</span>
-        </div>
-      </article>
+      <p style="color:var(--text-muted)">Loading guides…</p>
     </section>
   </main>
 
@@ -150,4 +98,3 @@
   <script src="../script.js"></script>
 </body>
 </html>
-
