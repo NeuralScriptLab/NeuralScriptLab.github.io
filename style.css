@@ -1,5 +1,5 @@
 /* ==========================================================
-   NEURALSCRIPTLAB - CORE STYLESHEET (style.css)
+   NEURALSCRIPTLAB - COMPLETE CORE STYLESHEET (style.css)
    ========================================================== */
 
 * {
@@ -60,24 +60,25 @@ body {
   will-change: transform, opacity;
 }
 
-/* Layer 1: Background (Deep Stars/Abstract Grid) */
+/* Layer 1: Background Stars/Grid */
 .layer-bg {
   background-image: url('https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?q=80&w=1920&auto=format&fit=crop');
-  opacity: 0.65;
+  opacity: 0.55;
 }
 
-/* Layer 2: Midground (Core Floating Artwork/Network) */
+/* Layer 2: Midground (Aapki Nayi Uploaded AI & Coding Image) */
 .layer-mid {
-  background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1920&auto=format&fit=crop');
-  mix-blend-mode: screen;
-  opacity: 0.8;
+  background-image: url('https://i.ibb.co/mrdgyKr2/file-000000002944821180a5962eb6aea0ef.png');
+  background-size: contain;
+  background-position: center 35%;
+  opacity: 0.85;
 }
 
-/* Layer 3: Foreground (Bokeh / Floating Tech Dust) */
+/* Layer 3: Foreground (Ambient Dust Particles) */
 .layer-fore {
   background-image: url('https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=1920&auto=format&fit=crop');
   mix-blend-mode: screen;
-  opacity: 0.35;
+  opacity: 0.3;
 }
 
 .depth-overlay {
@@ -86,7 +87,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 50% 50%, rgba(4, 6, 11, 0.25) 0%, rgba(4, 6, 11, 0.95) 85%);
+  background: radial-gradient(circle at 50% 40%, rgba(4, 6, 11, 0.35) 0%, rgba(4, 6, 11, 0.96) 85%);
 }
 
 /* ==========================================================
@@ -181,7 +182,7 @@ body {
 }
 
 .hero-section {
-  min-height: 80vh;
+  min-height: 85vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -349,13 +350,13 @@ body {
 }
 
 /* ==========================================================
-   FOOTER
+   FOOTER (STRICT VERTICAL STACKING)
    ========================================================== */
 
 .site-footer {
   border-top: 1px solid var(--border-subtle);
-  background: rgba(4, 6, 11, 0.9);
-  padding: 40px 24px;
+  background: rgba(4, 6, 11, 0.96);
+  padding: 50px 24px 40px;
   position: relative;
   z-index: 1;
 }
@@ -365,35 +366,77 @@ body {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.footer-left {
+  max-width: 450px;
 }
 
 .footer-brand {
-  font-weight: 700;
+  font-weight: 800;
+  font-size: 1.3rem;
   color: #ffffff;
+  margin-bottom: 8px;
 }
 
 .footer-desc {
   color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.footer-copy {
+  color: #475569;
   font-size: 0.85rem;
 }
 
-.footer-links {
+.footer-right {
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.footer-links a {
+.footer-col-title {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
+}
+
+.footer-vertical-links {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+}
+
+.footer-vertical-links a {
+  display: block !important;
   color: var(--text-secondary);
   text-decoration: none;
-  font-size: 0.85rem;
-  transition: color 0.2s ease;
+  font-size: 0.92rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+  width: auto;
 }
 
-.footer-links a:hover {
+.footer-vertical-links a:hover {
   color: var(--accent-cyan);
+  transform: translateX(4px);
+}
+
+.footer-vertical-links .back-top {
+  color: var(--text-muted);
+  margin-top: 8px;
+  font-size: 0.85rem;
+}
+
+.footer-vertical-links .back-top:hover {
+  color: #ffffff;
 }
 
 /* ==========================================================
@@ -402,7 +445,7 @@ body {
 
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
   }
   
   .nav-links {
@@ -416,4 +459,10 @@ body {
   .feed-grid {
     grid-template-columns: 1fr;
   }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 32px;
+  }
 }
+
