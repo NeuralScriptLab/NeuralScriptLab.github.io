@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "Building Local RAG Pipelines from Scratch with Ollama",
+    "summary": "Step-by-step implementation of offline document embedding, vector indexing, and low-latency retrieval loops.",
+    "category": "ai",
+    "categoryLabel": "AI",
+    "date": "Aug 31, 2026",
+    "readTime": "8 min read",
+    "url": "articles/building-local-rag-pipeline.html",
+    "isLatest": true
+  },
+  {
+    "id": 2,
+    "title": "Serverless REST APIs: Zero Cold Starts on Edge Runtimes",
+    "summary": "Architecting stateful caching, atomic payloads, and distributed endpoints with minimal compute overhead.",
+    "category": "coding",
+    "categoryLabel": "Coding",
+    "date": "Aug 30, 2026",
+    "readTime": "6 min read",
+    "url": "articles/high-throughput-serverless-apis.html",
+    "isLatest": true
+  },
+  {
+    "id": 3,
+    "title": "Git Blobs, Trees, and Deterministic CI/CD Deployments",
+    "summary": "Understanding internal object databases, automated GitHub Pages triggers, and verification scripts.",
+    "category": "tech",
+    "categoryLabel": "Technology",
+    "date": "Aug 29, 2026",
+    "readTime": "7 min read",
+    "url": "articles/git-internals-and-automated-actions.html",
+    "isLatest": true
+  },
+  {
+    "id": 4,
+    "title": "Running Production Systems Completely on Free-Tier Cloud",
+    "summary": "A blueprint for pairing Cloudflare Workers, GitHub Pages, and distributed edge KV databases safely.",
+    "category": "tech",
+    "categoryLabel": "Technology",
+    "date": "Aug 25, 2026",
+    "readTime": "8 min read",
+    "url": "articles/zero-cost-production-infrastructure.html",
+    "isLatest": false
+  }
+]
+
