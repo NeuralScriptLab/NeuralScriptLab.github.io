@@ -7,7 +7,6 @@
   <meta name="description" content="Technical deep-dives into Artificial Intelligence, local LLMs, full-stack systems, and serverless engineering.">
   <link rel="canonical" href="https://neuralscriptlab.github.io/">
 
-  <!-- Open Graph / Twitter -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://neuralscriptlab.github.io/">
   <meta property="og:title" content="NeuralScriptLab — Engineering, AI & Modern Web">
@@ -15,26 +14,11 @@
   <meta property="og:image" content="https://i.ibb.co/mrdgyKr2/file-000000002944821180a5962eb6aea0ef.png">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Schema.org JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "NeuralScriptLab",
-    "url": "https://neuralscriptlab.github.io/",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://neuralscriptlab.github.io/?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
-
   <link rel="stylesheet" href="style.css">
 </head>
 <body id="top">
 
-  <!-- Multi-Layer 3D Background Scene -->
+  <!-- Background 3D Viewport -->
   <div class="scene-container" aria-hidden="true">
     <div class="layer layer-bg" id="layerBg"></div>
     <div class="layer layer-mid" id="layerMid"></div>
@@ -50,67 +34,90 @@
         <span class="logo-text">NeuralScript<span class="logo-highlight">Lab</span></span>
       </a>
 
-      <nav class="nav-links">
-        <a href="#latest" class="nav-item">Latest Updates</a>
-        <a href="#all-articles" class="nav-item">All Guides</a>
-        <a href="#categories" class="nav-item">Categories</a>
-      </nav>
-
       <div class="search-box">
         <input type="text" id="searchInput" placeholder="Search technical guides..." autocomplete="off">
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Main Feed Layout (Exact 2nd Image Layout) -->
   <main class="main-layout">
-    <section class="hero-section">
-      <div class="badge-pill">AI • Coding • Technology</div>
-      <h1 class="hero-title">Architecting the Modern Machine.</h1>
-      <p class="hero-description">
-        Comprehensive tutorials, architectural breakdowns, and low-latency system design for developers.
-      </p>
-      <div class="scroll-cue">
-        <span>Scroll to explore</span>
-        <span class="bounce-arrow">↓</span>
-      </div>
-    </section>
-
-    <!-- 1. LATEST UPDATES (SHOWS EXACTLY TOP 3 NEWEST ARTICLES) -->
-    <section class="section-block" id="latest">
-      <div class="section-header-row">
-        <div class="section-title-wrap">
-          <span class="live-dot"></span>
-          <h2 class="section-heading">Latest Updates</h2>
-        </div>
-        <span class="section-sub">Top 3 freshly published dispatches</span>
-      </div>
-      <div class="feed-grid" id="latestFeedContainer">
-        <!-- Rendered Dynamically via script.js (Limit 3) -->
-      </div>
-    </section>
-
-    <!-- 2. CATEGORY FILTER STRIP -->
-    <section class="section-block" id="all-articles">
-      <div class="section-header-row">
-        <h2 class="section-heading">Explore All Guides</h2>
-      </div>
-
-      <div class="category-strip" id="categories">
+    
+    <!-- Hero / Category Strip Directly Above Feed -->
+    <div class="feed-header">
+      <section class="category-strip" id="categories">
         <button class="cat-pill active" data-filter="all">All Modules</button>
-        <button class="cat-pill" data-filter="ai">AI</button>
-        <button class="cat-pill" data-filter="coding">Coding</button>
-        <button class="cat-pill" data-filter="tech">Technology</button>
-      </div>
+        <button class="cat-pill" data-filter="ai">AI & Neural</button>
+        <button class="cat-pill" data-filter="web">Web Architecture</button>
+        <button class="cat-pill" data-filter="cloud">Cloud & DevOps</button>
+      </section>
+    </div>
 
-      <!-- MAIN ARTICLES FEED -->
-      <div class="feed-grid" id="mainFeedContainer">
-        <!-- Rendered Dynamically via script.js -->
-      </div>
+    <!-- Article 1 -->
+    <section class="feed-grid">
+      <article class="article-card" data-category="ai">
+        <div class="card-meta">
+          <span class="card-tag">AI & Neural</span>
+          <span class="card-date">Aug 2026 • 8 min read</span>
+        </div>
+        <h2 class="card-title">
+          <a href="articles/building-local-rag-pipeline.html">Building Local RAG Pipelines from Scratch with Ollama</a>
+        </h2>
+        <p class="card-summary">
+          Step-by-step implementation of offline document embedding, vector indexing, and low-latency retrieval loops.
+        </p>
+        <div class="card-footer">
+          <a href="articles/building-local-rag-pipeline.html" class="read-more">Read Guide →</a>
+        </div>
+      </article>
+
+      <!-- Article 2 -->
+      <article class="article-card" data-category="web">
+        <div class="card-meta">
+          <span class="card-tag">Web Architecture</span>
+          <span class="card-date">Aug 2026 • 6 min read</span>
+        </div>
+        <h2 class="card-title">
+          <a href="articles/high-throughput-serverless-apis.html">Serverless REST APIs: Zero Cold Starts on Edge Runtimes</a>
+        </h2>
+        <p class="card-summary">
+          Architecting stateful caching, atomic payloads, and distributed endpoints with minimal compute overhead.
+        </p>
+        <div class="card-footer">
+          <a href="articles/high-throughput-serverless-apis.html" class="read-more">Read Guide →</a>
+        </div>
+      </article>
+
+      <!-- Article 3 (Latest Updates Section Directly Under 3rd Card) -->
+      <article class="article-card" data-category="cloud">
+        <div class="card-meta">
+          <span class="card-tag">Cloud & DevOps</span>
+          <span class="card-date">Aug 2026 • 7 min read</span>
+        </div>
+        <h2 class="card-title">
+          <a href="articles/git-internals-and-automated-actions.html">Git Blobs, Trees, and Deterministic CI/CD Deployments</a>
+        </h2>
+        <p class="card-summary">
+          Understanding internal object databases, automated GitHub Pages triggers, and verification scripts.
+        </p>
+        <div class="card-footer">
+          <a href="articles/git-internals-and-automated-actions.html" class="read-more">Read Guide →</a>
+        </div>
+      </article>
     </section>
+
+    <!-- Latest Updates Box Under Article 3 -->
+    <div class="updates-banner">
+      <span class="updates-dot"></span>
+      <div class="updates-content">
+        <span class="updates-label">Latest Updates</span>
+        <p class="updates-text">Top 3 articles are currently synced live with GitHub Pages repository.</p>
+      </div>
+    </div>
+
   </main>
 
-  <!-- Site Footer -->
+  <!-- Site Footer (Vertical Stack Layout - 3rd Image) -->
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-left">
@@ -119,7 +126,6 @@
         <p class="footer-copy">© 2026 NeuralScriptLab. All rights reserved.</p>
       </div>
 
-      <!-- Vertical Legal & Support Column -->
       <div class="footer-right">
         <p class="footer-col-title">Legal & Support</p>
         <nav class="footer-vertical-links">
