@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeuralScriptLab — Engineering, AI & Modern Web</title>
+  <meta name="description" content="Technical deep-dives into Artificial Intelligence, local LLMs, full-stack systems, and serverless engineering.">
+  <link rel="canonical" href="https://neuralscriptlab.github.io/">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://neuralscriptlab.github.io/">
+  <meta property="og:title" content="NeuralScriptLab — Engineering, AI & Modern Web">
+  <meta property="og:description" content="Deep dives into AI, local models, and production system design.">
+  <meta property="og:image" content="https://neuralscriptlab.github.io/assets/images/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "NeuralScriptLab",
+    "url": "https://neuralscriptlab.github.io/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://neuralscriptlab.github.io/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Multi-Layer 3D Background Scene -->
+  <div class="scene-container" aria-hidden="true">
+    <div class="layer layer-bg" id="layerBg"></div>
+    <div class="layer layer-mid" id="layerMid"></div>
+    <div class="layer layer-fore" id="layerFore"></div>
+    <div class="depth-overlay"></div>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="/" class="brand-logo">
+        <span class="logo-symbol">&lt;/&gt;</span>
+        <span class="logo-text">NeuralScript<span class="logo-highlight">Lab</span></span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#articles" class="nav-item">Articles</a>
+        <a href="#categories" class="nav-item">Categories</a>
+        <a href="#about" class="nav-item">About</a>
+      </nav>
+
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search technical guides..." autocomplete="off">
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="main-layout">
+    <section class="hero-section">
+      <div class="badge-pill">AI Models • Systems • Web Engineering</div>
+      <h1 class="hero-title">Architecting the Modern Machine.</h1>
+      <p class="hero-description">
+        Comprehensive tutorials, architectural breakdowns, and low-latency system design for developers.
+      </p>
+      <div class="scroll-cue">
+        <span>Scroll to explore</span>
+        <span class="bounce-arrow">↓</span>
+      </div>
+    </section>
+
+    <!-- Category Pills -->
+    <section class="category-strip" id="categories">
+      <button class="cat-pill active" data-filter="all">All Modules</button>
+      <button class="cat-pill" data-filter="ai">AI & Neural</button>
+      <button class="cat-pill" data-filter="web">Web Architecture</button>
+      <button class="cat-pill" data-filter="cloud">Cloud & DevOps</button>
+    </section>
+
+    <!-- Articles Grid -->
+    <section class="feed-grid" id="articles">
+      <article class="article-card" data-category="ai">
+        <div class="card-meta">
+          <span class="card-tag">AI & Neural</span>
+          <span class="card-date">Aug 2026 • 8 min read</span>
+        </div>
+        <h2 class="card-title"><a href="articles/building-local-rag-pipeline.html">Building Local RAG Pipelines from Scratch with Ollama</a></h2>
+        <p class="card-summary">
+          Step-by-step implementation of offline document embedding, vector indexing, and low-latency retrieval loops.
+        </p>
+        <div class="card-footer">
+          <span class="read-more">Read Guide →</span>
+        </div>
+      </article>
+
+      <article class="article-card" data-category="web">
+        <div class="card-meta">
+          <span class="card-tag">Web Architecture</span>
+          <span class="card-date">Aug 2026 • 6 min read</span>
+        </div>
+        <h2 class="card-title"><a href="articles/high-throughput-serverless-apis.html">Serverless REST APIs: Zero Cold Starts on Edge Runtimes</a></h2>
+        <p class="card-summary">
+          Architecting stateful caching, atomic payloads, and distributed endpoints with minimal compute overhead.
+        </p>
+        <div class="card-footer">
+          <span class="read-more">Read Guide →</span>
+        </div>
+      </article>
+
+      <article class="article-card" data-category="cloud">
+        <div class="card-meta">
+          <span class="card-tag">Cloud & DevOps</span>
+          <span class="card-date">Aug 2026 • 7 min read</span>
+        </div>
+        <h2 class="card-title"><a href="articles/git-internals-and-automated-actions.html">Git Blobs, Trees, and Deterministic CI/CD Deployments</a></h2>
+        <p class="card-summary">
+          Understanding internal object databases, automated GitHub Pages triggers, and verification scripts.
+        </p>
+        <div class="card-footer">
+          <span class="read-more">Read Guide →</span>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="about">
+    <div class="footer-container">
+      <div class="footer-left">
+        <p class="footer-brand">NeuralScriptLab</p>
+        <p class="footer-desc">Independent engineering publication and technical research hub.</p>
+      </div>
+      <div class="footer-links">
+        <a href="sitemap.xml">Sitemap</a>
+        <a href="robots.txt">Robots.txt</a>
+        <a href="#top">Back to Top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
