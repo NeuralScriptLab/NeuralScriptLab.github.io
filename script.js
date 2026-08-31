@@ -21,7 +21,7 @@ window.addEventListener('scroll', () => {
       const foreScale = 1 + scrollY * 0.0016;
       const foreTranslate = scrollY * 0.22;
       const foreOpacity = Math.max(0, 0.3 - scrollY * 0.0005);
-      
+
       layerFore.style.transform = `scale(${foreScale}) translateY(${foreTranslate}px)`;
       layerFore.style.opacity = foreOpacity;
 
@@ -33,18 +33,23 @@ window.addEventListener('scroll', () => {
 });
 
 // 2. Dynamic Articles Engine (JSON Connected)
-let allArticlesData = [];
+// Every card is rendered from data/articles.json. A category page reads its
+// own "category" key off <body data-category="..."> and simply filters the
+// same JSON feed — so a brand-new article dropped into articles.json shows
+// up automatically, already wearing that section's theme (the theme lives
+// in CSS variables the cards inherit, nothing to re-style by hand).
 
-function createArticleCardHTML(article) {
+function createArticleCardHTML(article, headingTag) {
+  const tag = headingTag || 'h3';
   return `
     <article class="article-card" data-category="${article.category}">
       <div class="card-meta">
         <span class="card-tag">${article.categoryLabel}</span>
         <span class="card-date">${article.date} • ${article.readTime}</span>
       </div>
-      <h3 class="card-title">
+      <${tag} class="card-title">
         <a href="${article.url}">${article.title}</a>
-      </h3>
+      </${tag}>
       <p class="card-summary">${article.summary}</p>
       <div class="card-footer">
         <a href="${article.url}" class="read-more">Read Guide →</a>
@@ -53,68 +58,61 @@ function createArticleCardHTML(article) {
   `;
 }
 
+function articlesJsonPath() {
+  // Category pages live one folder down, in /categories/
+  return document.body.dataset.category ? '../data/articles.json' : 'data/articles.json';
+}
+
 async function loadArticles() {
-  const latestContainer = document.getElementById('latestFeedContainer');
-  const mainContainer = document.getElementById('mainFeedContainer');
+  const container = document.getElementById('articles');
+  if (!container) return;
+
+  const category = document.body.dataset.category; // set on category pages only
+  const countBadge = document.getElementById('articleCount');
 
   try {
-    const response = await fetch('data/articles.json');
+    const response = await fetch(articlesJsonPath());
     if (!response.ok) throw new Error('Failed to load articles');
-    allArticlesData = await response.json();
+    const allArticles = await response.json();
 
-    // 1. Render Top 3 Latest Articles
-    const latestArticles = allArticlesData.slice(0, 3);
-    latestContainer.innerHTML = latestArticles.map(createArticleCardHTML).join('');
-
-    // 2. Render All Articles in Main Feed
-    mainContainer.innerHTML = allArticlesData.map(createArticleCardHTML).join('');
+    let toRender;
+    if (category) {
+      // Category page: show every article whose "category" field matches,
+      // newest first.
+      toRender = allArticles.filter(a => a.category === category);
+      if (countBadge) {
+        countBadge.textContent = `${toRender.length} Guide${toRender.length === 1 ? '' : 's'} Available`;
+      }
+      container.innerHTML = toRender.length
+        ? toRender.map(a => createArticleCardHTML(a, 'h2')).join('')
+        : `<p style="color:var(--text-muted)">No guides published in this section yet — check back soon.</p>`;
+    } else {
+      // Homepage: show the 3 most recent articles across all categories.
+      toRender = allArticles.slice(0, 3);
+      container.innerHTML = toRender.map(a => createArticleCardHTML(a, 'h3')).join('');
+    }
   } catch (err) {
     console.error('Error fetching articles:', err);
-    latestContainer.innerHTML = `<p style="color:#94a3b8">Unable to fetch latest updates.</p>`;
+    container.innerHTML = `<p style="color:var(--text-muted)">Unable to fetch articles right now.</p>`;
   }
 }
 
-// 3. Real-Time Search Filtering
+// 3. Real-Time Search Filtering (works on whichever cards are on the page)
 const searchInput = document.getElementById('searchInput');
 
-searchInput.addEventListener('input', (e) => {
-  const query = e.target.value.toLowerCase().trim();
-  const allCards = document.querySelectorAll('.article-card');
+if (searchInput) {
+  searchInput.addEventListener('input', (e) => {
+    const query = e.target.value.toLowerCase().trim();
+    const allCards = document.querySelectorAll('.article-card');
 
-  allCards.forEach((card) => {
-    const title = card.querySelector('.card-title').textContent.toLowerCase();
-    const summary = card.querySelector('.card-summary').textContent.toLowerCase();
+    allCards.forEach((card) => {
+      const title = card.querySelector('.card-title').textContent.toLowerCase();
+      const summary = card.querySelector('.card-summary').textContent.toLowerCase();
 
-    if (title.includes(query) || summary.includes(query)) {
-      card.style.display = 'flex';
-    } else {
-      card.style.display = 'none';
-    }
-  });
-});
-
-// 4. Category Filter Buttons
-const catButtons = document.querySelectorAll('.cat-pill');
-
-catButtons.forEach((btn) => {
-  btn.addEventListener('click', () => {
-    catButtons.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-
-    const filter = btn.getAttribute('data-filter');
-    const mainContainerCards = document.querySelectorAll('#mainFeedContainer .article-card');
-
-    mainContainerCards.forEach((card) => {
-      const category = card.getAttribute('data-category');
-      if (filter === 'all' || category === filter) {
-        card.style.display = 'flex';
-      } else {
-        card.style.display = 'none';
-      }
+      card.style.display = (title.includes(query) || summary.includes(query)) ? 'flex' : 'none';
     });
   });
-});
+}
 
 // Initialize on DOM load
 document.addEventListener('DOMContentLoaded', loadArticles);
-
