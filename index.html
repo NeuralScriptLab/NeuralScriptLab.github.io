@@ -43,14 +43,21 @@
 
   <!-- Main Feed Layout -->
   <main class="main-layout">
-    
-    <!-- Hero / Category Strip Directly Above Articles -->
+
+    <!-- Welcome Block -->
+    <div class="welcome-block">
+      <p class="welcome-eyebrow">👋 Welcome to NeuralScriptLab</p>
+      <h1 class="welcome-punchline">Where Code Meets Intelligence.</h1>
+      <p class="welcome-tagline">Hands-on, no-fluff engineering guides on AI, code, and the systems that power the modern web — built by engineers, for engineers.</p>
+    </div>
+
+    <!-- Category Strip Directly Above Articles -->
     <div class="feed-header">
       <section class="category-strip" id="categories">
-        <button class="cat-pill active" data-filter="all">All Modules</button>
-        <button class="cat-pill" data-filter="ai">AI</button>
-        <button class="cat-pill" data-filter="coding">Coding</button>
-        <button class="cat-pill" data-filter="tech">Technology</button>
+        <span class="cat-pill active">All Modules</span>
+        <a href="categories/ai.html" class="cat-pill">AI</a>
+        <a href="categories/coding.html" class="cat-pill">Coding</a>
+        <a href="categories/tech.html" class="cat-pill">Technology</a>
       </section>
     </div>
 
@@ -60,58 +67,9 @@
       <h2 class="section-heading">Latest Updates</h2>
     </div>
 
-    <!-- Articles Feed (Top 3 Cards) -->
+    <!-- Articles Feed (Top 3 Cards, loaded from data/articles.json) -->
     <section class="feed-grid" id="articles">
-      <!-- Card 1: AI -->
-      <article class="article-card" data-category="ai">
-        <div class="card-meta">
-          <span class="card-tag">AI</span>
-          <span class="card-date">Aug 2026 • 8 min read</span>
-        </div>
-        <h3 class="card-title">
-          <a href="articles/building-local-rag-pipeline.html">Building Local RAG Pipelines from Scratch with Ollama</a>
-        </h3>
-        <p class="card-summary">
-          Step-by-step implementation of offline document embedding, vector indexing, and low-latency retrieval loops.
-        </p>
-        <div class="card-footer">
-          <a href="articles/building-local-rag-pipeline.html" class="read-more">Read Guide →</a>
-        </div>
-      </article>
-
-      <!-- Card 2: Coding -->
-      <article class="article-card" data-category="coding">
-        <div class="card-meta">
-          <span class="card-tag">Coding</span>
-          <span class="card-date">Aug 2026 • 6 min read</span>
-        </div>
-        <h3 class="card-title">
-          <a href="articles/high-throughput-serverless-apis.html">Serverless REST APIs: Zero Cold Starts on Edge Runtimes</a>
-        </h3>
-        <p class="card-summary">
-          Architecting stateful caching, atomic payloads, and distributed endpoints with minimal compute overhead.
-        </p>
-        <div class="card-footer">
-          <a href="articles/high-throughput-serverless-apis.html" class="read-more">Read Guide →</a>
-        </div>
-      </article>
-
-      <!-- Card 3: Technology -->
-      <article class="article-card" data-category="tech">
-        <div class="card-meta">
-          <span class="card-tag">Technology</span>
-          <span class="card-date">Aug 2026 • 7 min read</span>
-        </div>
-        <h3 class="card-title">
-          <a href="articles/git-internals-and-automated-actions.html">Git Blobs, Trees, and Deterministic CI/CD Deployments</a>
-        </h3>
-        <p class="card-summary">
-          Understanding internal object databases, automated GitHub Pages triggers, and verification scripts.
-        </p>
-        <div class="card-footer">
-          <a href="articles/git-internals-and-automated-actions.html" class="read-more">Read Guide →</a>
-        </div>
-      </article>
+      <p style="color:var(--text-muted)">Loading latest guides…</p>
     </section>
 
   </main>
@@ -140,4 +98,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
